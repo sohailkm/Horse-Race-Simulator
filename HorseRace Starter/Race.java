@@ -100,6 +100,24 @@ public class Race
             {
                 finished = true;
             }
+
+            if (raceWonBy(lane1Horse)){
+                finished = true;
+                System.out.println("And the winner is " + lane1Horse.getName());
+            }
+            if (raceWonBy(lane2Horse)){
+                finished = true;
+                System.out.println("And the winner is " + lane2Horse.getName());
+            }
+            if (raceWonBy(lane3Horse)){
+                finished = true;
+                System.out.println("And the winner is " + lane3Horse.getName());
+            }
+            else if (lane1Horse.hasFallen()&& lane2Horse.hasFallen() && lane3Horse.hasFallen()){
+                finished = true;
+                System.out.println("All horses fell");
+            }
+
            
             //wait for 100 milliseconds
             try{ 
@@ -167,13 +185,13 @@ public class Race
         System.out.println();
         
         printLane(lane1Horse);
-        System.out.println();
+        System.out.println(lane1Horse.getName() + "(Current confidence" + lane1Horse.getConfidence() + ")");
         
         printLane(lane2Horse);
-        System.out.println();
+        System.out.println(lane2Horse.getName() + "(Current confidence" + lane2Horse.getConfidence() + ")");
         
         printLane(lane3Horse);
-        System.out.println();
+        System.out.println(lane3Horse.getName() + "(Current confidence" + lane3Horse.getConfidence() + ")");
         
         multiplePrint('=',raceLength+3); //bottom edge of track
         System.out.println();    
