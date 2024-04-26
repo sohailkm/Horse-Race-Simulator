@@ -15,6 +15,19 @@ public class Race
     private Horse lane2Horse;
     private Horse lane3Horse;
 
+
+    public static void main(String[] args){//starts the race
+        Race race = new Race(20);
+        Horse horse1 = new Horse('A', "John", 0.5);
+        Horse horse2 = new Horse('B', "John1", 0.5);
+        Horse horse3 = new Horse('C', "John2", 0.5);
+        race.addHorse(horse1,1);
+        race.addHorse(horse2,2);
+        race.addHorse(horse3,3);
+        race.startRace();
+    }
+
+
     /**
      * Constructor for objects of class Race
      * Initially there are no horses in the lanes
